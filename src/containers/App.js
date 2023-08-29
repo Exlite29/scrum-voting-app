@@ -1,6 +1,7 @@
 import "./App.css";
 import Heading from "../components/Heading/Heading";
 import Button from "../components/Button/Button";
+import FeatureTitle from "../components/FeatureTitle/FeatureTitle";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
             // disabled={false}
             className="ml-3"
           />
+        </div>
+        <div className="flex justify-center">
+          <FeatureTitle />
         </div>
       </div>
     </main>
