@@ -16,7 +16,7 @@ const Username = () => {
   const [savedUsernames, setSavedUsernames] = useState([]);
   const [userRatings, setUserRatings] = useState({});
   const [selectedUsername, setSelectedUsername] = useState(null);
-  const [ascendingOrder, setAscendingOrder] = useState(true); // Sorting order
+  const [ascendingOrder, setAscendingOrder] = useState(true); 
 
   useEffect(() => {
     const usernamesRef = database.ref("usernames");
