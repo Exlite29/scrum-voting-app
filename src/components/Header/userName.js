@@ -101,7 +101,7 @@ const UsernameGenerator = () => {
             onClick={handleResetSession}
             color="red"
           />
-          <span className="mx-2"></span> {/* Add a space between the buttons */}
+          <span className="mx-2"></span> 
           <Button
             label="Refresh User"
             onClick={handleRefreshUser}
