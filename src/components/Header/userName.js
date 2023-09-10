@@ -99,13 +99,13 @@ const UsernameGenerator = () => {
           <Button
             label="Reset Session"
             onClick={handleResetSession}
-            color="red"
+            className="bg-red-500"
           />
-          <span className="mx-2"></span> {/* Add a space between the buttons */}
+          <span className="mx-2"></span>
           <Button
             label="Refresh User"
             onClick={handleRefreshUser}
-            color="blue"
+            color="bg-blue-500"
           />
         </div>
 
