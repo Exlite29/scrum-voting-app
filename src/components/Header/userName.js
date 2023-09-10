@@ -5,10 +5,11 @@ import { database } from "../../config/firebase";
 import Voting from "../Voting/Voting";
 import Display from "../Display/Display";
 import Button from "../Button/Button";
+import Input from "../Input/Input";
 
 const generateRandomUsername = () => `user${Math.floor(Math.random() * 1000)}`;
 
-const UsernameGenerator = () => {
+const Username = () => {
   const dispatch = useDispatch();
   const username = useSelector((state) => state.username);
   const [inputUsername, setInputUsername] = useState(username);
@@ -108,6 +109,9 @@ const UsernameGenerator = () => {
             color="bg-blue-500"
           />
         </div>
+        <div className="mt-4 flex justify-center">
+          <Input />
+        </div>
 
         <Voting handleRatingChange={handleRatingChange} />
 
@@ -122,4 +126,4 @@ const UsernameGenerator = () => {
   );
 };
 
-export default UsernameGenerator;
+export default Username;
