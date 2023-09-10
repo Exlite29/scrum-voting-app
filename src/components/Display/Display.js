@@ -1,19 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Display = ({ savedUsernames, userRatings, setSelectedUsername }) => {
+const Display = ({
+  savedUsernames,
+  userRatings,
+  setSelectedUsername,
+  toggleOrder,
+  sortedUsernames,
+}) => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="inline-block max-w-screen-sm border border-solid border-gray-300 rounded-lg p-4 bg-white">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold">Participants:</h3>
-
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded ">
+          <button
+            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+            onClick={toggleOrder}
+          >
             Reveal
           </button>
         </div>
         <ul>
-          {savedUsernames.map((savedUsername, index) => (
+          {sortedUsernames.map((savedUsername, index) => (
             <li
               key={index}
               onClick={() => setSelectedUsername(savedUsername)}

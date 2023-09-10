@@ -16,6 +16,7 @@ const Username = () => {
   const [savedUsernames, setSavedUsernames] = useState([]);
   const [userRatings, setUserRatings] = useState({});
   const [selectedUsername, setSelectedUsername] = useState(null);
+  const [ascendingOrder, setAscendingOrder] = useState(true); // Sorting order
 
   useEffect(() => {
     const usernamesRef = database.ref("usernames");
@@ -73,6 +74,18 @@ const Username = () => {
     }
   };
 
+  const toggleOrder = () => {
+    setAscendingOrder(!ascendingOrder);
+  };
+
+  const sortedUsernames = [...savedUsernames].sort((a, b) => {
+    if (ascendingOrder) {
+      return a.localeCompare(b);
+    } else {
+      return b.localeCompare(a);
+    }
+  });
+
   const handleResetSession = () => {};
 
   const handleRefreshUser = () => {};
@@ -120,6 +133,8 @@ const Username = () => {
           savedUsernames={savedUsernames}
           userRatings={userRatings}
           setSelectedUsername={setSelectedUsername}
+          toggleOrder={toggleOrder}
+          sortedUsernames={sortedUsernames}
         />
       </div>
     </div>
