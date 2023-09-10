@@ -1,4 +1,4 @@
-// usernameSlice.js
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const usernameSlice = createSlice({
